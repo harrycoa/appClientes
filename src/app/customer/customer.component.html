@@ -1,0 +1,78 @@
+<div mat-dialog-title>
+  <h1>Customer Form</h1>
+</div>
+
+<form [formGroup]="customerForm" (ngSubmit)="onFormSubmit()">
+
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" placeholder="Ex. Harry" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Ex. Coa" formControlName="lastName">
+      </mat-form-field>
+
+    </div>
+
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Adress</mat-label>
+        <input matInput type="text" placeholder="Ex. Av. El Sol" formControlName="address">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput type="text" placeholder="Ex. Cusco" formControlName="city">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput type="text" placeholder="Ex. Perú" formControlName="country">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>PhoneNumber</mat-label>
+        <input matInput type="text" placeholder="Ex. +51994994994" formControlName="phoneNumber">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="Ex. rodol_2000@hotmail.com" formControlName="email">
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-slide-toggle formControlName="enabled"
+            class="example-margin"
+            [color]="color"
+            [checked]="checked"
+            [disabled]="disabled">
+          Enabled
+        </mat-slide-toggle>
+    </div>
+
+
+
+
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button> Cancel </button>
+    <button mat-raised-button color="primary" type="submit"> Save </button>
+  </div>
+</form>
